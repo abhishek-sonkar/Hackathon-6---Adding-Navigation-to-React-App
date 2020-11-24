@@ -11,21 +11,22 @@ class App extends Component {
     }
     render() {
         return(
-            <BrowserRouter>
-                <div id="main">
-                    <Link to="/">HOME</Link>
-                    <Link to="/about">ABOUT</Link>
+            <div id="main">
+                <BrowserRouter>
                     <LocationDisplay/>
+                    <Link to="/">Home</Link>
+                    <Link to="/about">About</Link>
                     <Switch>
-                        <Route path='//'>
-                            <Home />
-                        </Route>
-                        <Route path='/about'>
-                            <About />
-                        </Route>
+                    <Route exact path='/about'>
+                        <About/>
+                    </Route>
+                    <Route exact path='/'>
+                        <Home/>
+                    </Route>
+                    <Route path='*'>No Match</Route>
                     </Switch>
-                </div>
-            </BrowserRouter>
+                </BrowserRouter>
+            </div>
         );
     }
 }

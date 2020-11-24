@@ -1,11 +1,5 @@
 import React from 'react';
+import{ useLocation } from 'react-router-dom';
 export default function LocationDisplay() {
-    return (<div>{
-        function usePageViews() {
-            let location = useLocation();
-            React.useEffect(() => {
-              ga.send(["pageview", location.pathname]);
-            }, [location]);
-          }
-          }</div>);
+    return (<div>{useLocation().pathname}</div>);
 }
