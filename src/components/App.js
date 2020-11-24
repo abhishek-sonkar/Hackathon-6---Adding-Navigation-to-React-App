@@ -23,7 +23,9 @@ class App extends Component {
                     <Route exact path='/'>
                         <Home/>
                     </Route>
-                    <Route path='*'>No match</Route>
+                    <Route path='*'>
+                        <div>No match</div>
+                    </Route>
                     </Switch>
                 </BrowserRouter>
             </div>
