@@ -1,9 +1,8 @@
 import React, {Component, useState} from "react";
-import {BrowserRouter, Link, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Link, Route, Switch, useLocation} from "react-router-dom";
 import '../styles/App.css';
 import Home from './Home';
 import About from './About';
-import LocationDisplay from './LocationDisplay';
 
 class App extends Component {
     constructor(props) {
@@ -33,5 +32,9 @@ class App extends Component {
     }
 }
 
+export function LocationDisplay() {
+    const { pathname } = useLocation();
+    return (<div data-testid="location-display">{pathname}</div>);
+}
 
 export default App;
